@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Instagram</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="box-celular">
+        <img id="img-celular" src="img/celular-instagram.png" alt="celular" />
+        <img id="images" src="./img/img-dentro1.jpg" alt="Imagem" />
+      </div>
+
+      <div class="box-conteudo">
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+        
+        <div class="group box-perfil">
+          <img id="img-logo" src="" alt="Logo instagram" />
+          <img id="img-perfil" src="./img/perfil.jpg" alt="Imagem perfil" />
+          <a href="#" class="btn-continue">Continue as NioDio</a>
+        </div>
+
+        <div class="group box-conta">
+          <span>Não é o NioDio?</span><br />
+          <a href="#">Alternar conta</a>
+          <span>ou</span>
+          <a href="#">Inscreva-se</a>
+        </div>
+        <div class="group box-download">
+          <img
+            class="img-download"
+            src="./img/disponivel-google-play-badge-2.png"
+            alt="Google Play"
+          />
+          <img
+            class="img-download"
+            src="./img/disponivel-na-app-store-botao-3.png"
+            alt="App Store"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script language="javascript">
+      var nrImagem = 0;
+      var imagens = [];
+      var refrescar = 1; // mudar imagem de 1 em 1 segundo
+
+      // colocar aqui todas as imagens, seguindo a ordem numérica
+      imagens[0] = "./img/img-dentro1.jpg";
+      imagens[1] = "./img/img-dentro2.jpg";
+      imagens[2] = "./img/img-dentro3.jpg";
+      //...
+
+      function rodarImagens() {
+        document.images["images"].src = imagens[nrImagem++];
+
+        if (nrImagem >= imagens.length) nrImagem = 0;
+
+        setTimeout("rodarImagens()", refrescar * 2000);
+      }
+
+      rodarImagens();
+
+    </script>
+  </body>
+</html>
